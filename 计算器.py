@@ -5,9 +5,10 @@
 # @Software: IntelliJ IDEA Community Edition 2022.2.1
 
 from tkinter import *
+from tkinter import Tk
 
 # 新建一个窗口
-window = Tk()
+window: Tk = Tk()
 
 # 设置大小及标题
 window.minsize(600, 505)
@@ -19,6 +20,7 @@ show_top.set("")
 show_bottom = StringVar()
 show_bottom.set("0")
 
+# 设置控件
 label1 = Label(window,
                font=("微软雅黑", 20),
                bg="#C0FAF9",
@@ -38,7 +40,12 @@ label2 = Label(window,
 label1.place(width=600, height=140)
 label2.place(y=140, width=600, height=90)
 
-# 设计数字按键
+# 设计按键响应函数
+lists = []
+# 作用分别是标记是否有运算符号和等号按键被按下，默认都是False
+isPressSign = False
+isPressEqual = False
+# 设计按键
 btn0 = Button(window,
               text="0",
               font=("微软雅黑", 20),
@@ -94,7 +101,47 @@ btn_point = Button(window,
                    font=("微软雅黑", 20),
                    fg="black",
                    bd=5)
-# 放置数字按键
+btn_ac = Button(window,
+                text="AC",
+                font=("微软雅黑", 20),
+                fg="black",
+                bd=5)
+btn_back = Button(window,
+                  text="←",
+                  font=("微软雅黑", 20),
+                  fg="black",
+                  bd=5)
+btn_division = Button(window,
+                      text="÷",
+                      font=("微软雅黑", 20),
+                      fg="black",
+                      bd=5)
+btn_mul = Button(window,
+                 text="×",
+                 font=("微软雅黑", 20),
+                 fg="black",
+                 bd=5)
+btn_sub = Button(window,
+                 text="－",
+                 font=("微软雅黑", 20),
+                 fg="black",
+                 bd=5)
+btn_add = Button(window,
+                 text="＋",
+                 font=("微软雅黑", 20),
+                 fg="black",
+                 bd=5)
+btn_equal = Button(window,
+                   text="=",
+                   font=("微软雅黑", 20),
+                   fg="black",
+                   bd=5)
+btn_percent = Button(window,
+                     text="%",
+                     font=("微软雅黑", 20),
+                     fg="black",
+                     bd=5)
+# 放置按键
 btn0.place(x=150, y=450, width=150, height=55)
 btn1.place(x=0, y=395, width=150, height=55)
 btn2.place(x=150, y=395, width=150, height=55)
@@ -106,9 +153,13 @@ btn7.place(x=0, y=285, width=150, height=55)
 btn8.place(x=150, y=285, width=150, height=55)
 btn9.place(x=300, y=285, width=150, height=55)
 btn_point.place(x=300, y=450, width=150, height=55)
+btn_ac.place(x=0, y=230, width=150, height=55)
+btn_back.place(x=150, y=230, width=150, height=55)
+btn_division.place(x=300, y=230, width=150, height=55)
+btn_mul.place(x=450, y=230, width=150, height=55)
+btn_sub.place(x=450, y=285, width=150, height=55)
+btn_add.place(x=450, y=340, width=150, height=55)
+btn_equal.place(x=450, y=395, width=150, height=55)
+btn_percent.place(x=0, y=450, width=150, height=55)
 
-# 设计运算符号按键
-
-
-# 放置运算符号按键
 window.mainloop()
